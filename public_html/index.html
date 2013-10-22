@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>eCRM App</title>
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <script src="js/libs/jquery-1.9.1.min.js"></script>
+        <script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
+        <style>
+            .box {
+                position:fixed;
+                margin-left:-150px; /* half of width */
+                margin-top:-150px;  /* half of height */
+                top:50%;
+                left:50%;
+            }
+
+            .imgpanel {
+                position:absolute;
+                top:0;
+                bottom:0;
+                margin:auto;
+                left:10px;
+            }            
+
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#txtnric").keypress(function(event) {
+                    if (event.keyCode == 13) {
+                        $.mobile.changePage('#pg_profile', {transition: "slide", role: "none", reverse: false});
+                    }
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <!--Search Customer-->
+            <div data-role="page" id="pg_search" data-theme="d">
+                <div data-role="header" data-position="fixed">
+                    <h1>eQbit-CRM</h1>
+                </div>
+                <div data-role="content" data-theme="">
+                    <table class="box">
+                        <tr>
+                            <td colspan="2">
+                                <img src="img/logo.jpg"/>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="txtnric">NRIC:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="txtnric" id="txtnric" value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-role="footer" data-position="fixed" data-id="pg_mainfooter">        
+                    <center>www.capelloloft.com<br><br></center>
+                </div>
+            </div>
+            <!--Customer Profile-->
+            <div data-role="page" id="pg_profile" data-theme="d">
+                <div data-role="header" data-position="fixed">
+                    <a href="#pg_search" data-icon="home" data-transition="slide" data-rel="back">Back</a>
+                    <h1>Welcome to Capello Loft</h1>
+                </div>
+                <div data-role="content" data-theme="">
+                    <div class="content-primary">
+                        <ul data-role="listview" data-theme="a" data-divider-theme="d">
+                            <li data-role="list-divider" data-theme="b">Customer Profile</li>
+                            <li><a href="#">
+                                    <img class="imgpanel" src="img/profile1.jpg" />
+                                    <h3>Angelina Jolie</h3>
+                                    <p>Age: 38 years old</p>
+                                    <p>Date joined: 03/09/2012</p>
+                                    <p>Last visit: Sunday, October 20, 2013</p>
+                                    <p>Last service: Hair Treatment</p>
+                                </a>
+                            </li>
+                            <li data-role="list-divider" data-theme="e">Featured Products and Promotions</li>
+                            <li><a href="#pg_products" data-transition="slide">
+                                    <img class="imgpanel" src="img/promo.jpg" />
+                                    <h3>Hurry!</h3>
+                                    <p>Please check out our featured products and promotions</p>
+                                    <p>Avail of our special price and big discounts</p>                                    
+                                    <br>
+                                </a>
+                            </li>
+                            <li data-role="list-divider" data-theme="b">History</li>
+                            <li data-role="list-divider">Sunday, October 20, 2013 </li>
+                            <li><a href="#">
+                                    <h3>Bryan Ong</h3>
+                                    <p><strong>Hair Treatment</strong></p>
+                                    <p>Feedback: Very good result</p>
+                                    <p class="ui-li-aside"><strong>2:30</strong>PM</p>
+                                </a>
+                            </li>
+                            <li data-role="list-divider">Sunday, October 6, 2013 </li>
+                            <li><a href="#">
+                                    <h3>Wilson Chua</h3>
+                                    <p><strong>Haircut</strong></p>
+                                    <p>Feedback: Very nice cut, I like it</p>
+                                    <p class="ui-li-aside"><strong>02:30</strong>PM</p>
+                                </a>
+                            </li>
+                            <li data-role="list-divider">Saturday, September 28, 2013 </li>
+                            <li><a href="#">
+                                    <h3>Antonio Ang</h3>
+                                    <p><strong>Hair Colour + Hair Treatment</strong></p>
+                                    <p>Feedback: Very good result</p>
+                                    <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                                </a>
+                            </li>                           
+                        </ul>                                            
+                    </div>
+                </div> 
+            </div>
+            <!--Featured Products and Promotions-->
+            <div data-role="page" id="pg_products" data-theme="d">
+                <div data-role="header" data-position="fixed" data-theme="e">
+                    <a href="#pg_profile" data-icon="home" data-transition="slide" data-rel="back">Back</a>
+                    <h1>Featured Products and Promotions</h1>
+                </div>
+                <div data-role="content" >
+                    <ul data-role="listview" data-theme="a" data-divider-theme="d">
+                        <li data-role="list-divider" data-theme="d">Featured Products</li>
+                        <li><a href="#">
+                                <img class="imgpanel" src="img/promo.jpg" />
+                                <h3>Keratase Densifique</h3>
+                                <p>Hair Density Activator</p>
+                                <p>Reveal Up To 1,700 New Hair</p>                                        
+                                <br>
+                            </a>
+                        </li>
+                        <li data-role="list-divider" data-theme="d">Promotions</li>
+                        <li><a href="#" data-theme="e">
+                                <img class="imgpanel" src="img/promo2.jpg" />
+                                <h3>Keratase Sensidote Dermo-Calm</h3>
+                                <p>Scalp Type All Types (Oily / Normal / Dry) with Sensitivity</p>                                
+                                <p>The 1st Professional Antidote against all Scalp discomfort</p>
+                                <p class="ui-li-aside" style="font-size:large"><strong>50% OFF</strong></p>
+                                <br>
+                            </a>
+                        </li>
+                        <li><a href="#" data-theme="e">
+                                <img class="imgpanel" src="img/promo3.jpg" />
+                                <h3>Keratase Sensidote Dermo-Calm</h3>
+                                <p>Scalp Type All Types (Oily / Normal / Dry) with Sensitivity</p>                                
+                                <p>The 1st Professional Antidote against all Scalp discomfort</p>
+                                <p class="ui-li-aside" style="font-size:large"><strong>30% OFF</strong></p>
+                                <br>
+                            </a>
+                        </li>
+                        <li><a href="#" data-theme="e">
+                                <img class="imgpanel" src="img/promo4.jpg" />
+                                <h3>Keratase Sensidote Dermo-Calm</h3>
+                                <p>Scalp Type All Types (Oily / Normal / Dry) with Sensitivity</p>                                
+                                <p>The 1st Professional Antidote against all Scalp discomfort</p>
+                                <p class="ui-li-aside" style="font-size:large"><strong>30% OFF</strong></p>
+                                <br>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
